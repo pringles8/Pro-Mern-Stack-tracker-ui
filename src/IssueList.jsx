@@ -165,7 +165,7 @@ class IssueList extends React.Component {
       const undoMessage = (
         <span>
           {`Deleted issue ${id} successfully.`}
-          <Button bsStyle="link" onClick={() => this.restoreIssue(id)}>
+          <Button bsStyle='link' onClick={() => this.restoreIssue(id)}>
             UNDO
           </Button>
         </span>
