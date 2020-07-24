@@ -80,7 +80,7 @@ class IssueList extends React.Component {
 
   constructor() {
     super();
-    const initialData = store.initialData || { issueList: {} };
+    const initialData = store.initialData || { issueList: { } };
     const {
       issueList: { issues, pages }, issue: selectedIssue,
     } = initialData;
