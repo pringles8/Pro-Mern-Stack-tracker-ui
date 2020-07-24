@@ -80,7 +80,7 @@ class IssueList extends React.Component {
 
   constructor() {
     super();
-    const initialData = store.initialData || { issueList: { } };
+    const initialData = store.initialData || { issueList: {} };
     const {
       issueList: { issues, pages }, issue: selectedIssue,
     } = initialData;
@@ -165,7 +165,7 @@ class IssueList extends React.Component {
       const undoMessage = (
         <span>
           {`Deleted issue ${id} successfully.`}
-          <Button bsStyle='link' onClick={() => this.restoreIssue(id)}>
+          <Button bsStyle="link" onClick={() => this.restoreIssue(id)}>
             UNDO
           </Button>
         </span>
