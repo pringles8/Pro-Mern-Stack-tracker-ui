@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import express from 'express';
-const { createProxyMiddleware } = require('http-proxy-middleware');
+import proxy  from 'http-proxy-middleware';
 import SourceMapSupport from 'source-map-support';
 
 import render from './render.jsx';
@@ -33,8 +33,8 @@ app.use(express.static('public'));
 
 const apiProxyTarget = process.env.API_PROXY_TARGET;
 if (apiProxyTarget) {
-  app.use('/graphql', createProxyMiddleware({ target: apiProxyTarget }));
-  app.use('/auth', createProxyMiddleware({ target: apiProxyTarget }));
+  app.use('/graphql', proxy({ target: apiProxyTarget }));
+  app.use('/auth', proxy({ target: apiProxyTarget }));
 }
 
 if (!process.env.UI_API_ENDPOINT) {
